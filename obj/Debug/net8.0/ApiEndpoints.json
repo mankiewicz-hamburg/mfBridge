@@ -9,7 +9,7 @@
     "Parameters": [
       {
         "Name": "payload",
-        "Type": "MFRequest",
+        "Type": "System.Text.Json.JsonElement",
         "IsRequired": true
       }
     ],
@@ -19,7 +19,6 @@
         "MediaTypes": [],
         "StatusCode": 200
       }
-    ],
-    "EndpointName": "MFRequest"
+    ]
   }
 ]

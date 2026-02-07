@@ -1,4 +1,5 @@
 using System.Security.Cryptography;
+using System.Text.Json;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -84,14 +85,23 @@ app.Use(async (context, next) =>
     await next();
 });
 
-// Your protected mfrequest endpoint
-app.MapPost("/mfrequest", (MFRequest payload) =>
+app.MapPost("/mfrequest", (JsonElement payload) =>
 {
-    // TODO: store/process payload here
-    return Results.Ok(new { status = "ok", received = payload });
-})
-.WithName("MFRequest")
-.WithOpenApi();
+    return Results.Ok(new
+    {
+        status = "Mankiflow sagt Danke",
+        received = payload
+    });
+});
+
+//// Your protected mfrequest endpoint
+//app.MapPost("/mfrequest", (MFRequest payload) =>
+//{
+//    // TODO: store/process payload here
+//    return Results.Ok(new { status = "ok", received = payload });
+//})
+//.WithName("MFRequest")
+//.WithOpenApi();
 
 app.Run();
 

@@ -10,13 +10,10 @@
         "tags": [
           "mfBridge"
         ],
-        "operationId": "MFRequest",
         "requestBody": {
           "content": {
             "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/MFRequest"
-              }
+              "schema": { }
             }
           },
           "required": true
@@ -30,26 +27,6 @@
     }
   },
   "components": {
-    "schemas": {
-      "MFRequest": {
-        "type": "object",
-        "properties": {
-          "source": {
-            "type": "string",
-            "nullable": true
-          },
-          "value": {
-            "type": "number",
-            "format": "double"
-          },
-          "timestamp": {
-            "type": "string",
-            "format": "date-time"
-          }
-        },
-        "additionalProperties": false
-      }
-    },
     "securitySchemes": {
       "ApiToken": {
         "type": "apiKey",

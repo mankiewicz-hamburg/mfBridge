@@ -34,3 +34,4 @@ C:\dev\mfBridge\obj\Debug\net8.0\refint\mfBridge.dll
 C:\dev\mfBridge\obj\Debug\net8.0\mfBridge.pdb
 C:\dev\mfBridge\obj\Debug\net8.0\mfBridge.genruntimeconfig.cache
 C:\dev\mfBridge\obj\Debug\net8.0\ref\mfBridge.dll
+C:\dev\mfBridge\obj\Debug\net8.0\mfBridge.sourcelink.json
