@@ -1,0 +1,67 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "mfBridge",
+    "version": "1.0"
+  },
+  "paths": {
+    "/mfrequest": {
+      "post": {
+        "tags": [
+          "mfBridge"
+        ],
+        "operationId": "MFRequest",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MFRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "MFRequest": {
+        "type": "object",
+        "properties": {
+          "source": {
+            "type": "string",
+            "nullable": true
+          },
+          "value": {
+            "type": "number",
+            "format": "double"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "ApiToken": {
+        "type": "apiKey",
+        "description": "API token required for protected endpoints",
+        "name": "X-API-Token",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "ApiToken": [ ]
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+@mfBridge_HostAddress = http://localhost:5293
+
+GET {{mfBridge_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
