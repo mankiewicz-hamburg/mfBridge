@@ -1,7 +1,31 @@
-bin/
-obj/
-.vs/
+# Build artifacts
+[Bb]in/
+[Oo]bj/
+out/
+
+# User-specific files
 *.user
+*.rsuser
 *.suo
-*.log
-appsettings.Development.json
+*.userosscache
+*.sln.docstates
+
+# Visual Studio / VS Code
+.vs/
+.vscode/
+
+# Test results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# NuGet
+*.nupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+
+# Rider
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
