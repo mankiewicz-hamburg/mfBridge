@@ -87,6 +87,8 @@ app.Use(async (context, next) =>
 
 app.MapPost("/mfrequest", (JsonElement payload) =>
 {
+    // Hier Mankiflow-Anbindung rein
+    app.Logger.LogInformation("Incoming mfrequest: {payload}",payload);
     return Results.Ok(new
     {
         status = "Mankiflow sagt Danke",
