@@ -118,6 +118,14 @@ app.Run();
 
 static async Task EnsureMfMagellanTableAsync(string connectionString)
 {
+    await using var connection = new SqlConnection(connectionString);
+    await connection.OpenAsync();
+
+    await EnsureMfMagellanTableAsync(connection);
+}
+
+static async Task EnsureMfMagellanTableAsync(SqlConnection connection)
+{
     const string ensureTableSql =
         """
         IF NOT EXISTS (SELECT 1 FROM sys.tables WHERE name = 'mfMagellan' AND schema_id = SCHEMA_ID('dbo'))
@@ -130,9 +138,6 @@ static async Task EnsureMfMagellanTableAsync(string connectionString)
         END
         """;
 
-    await using var connection = new SqlConnection(connectionString);
-    await connection.OpenAsync();
-
     await using var cmd = new SqlCommand(ensureTableSql, connection);
     await cmd.ExecuteNonQueryAsync();
 }
@@ -143,6 +148,8 @@ static async Task SaveMfRequestAsync(string connectionString, JsonElement payloa
 
     await using var connection = new SqlConnection(connectionString);
     await connection.OpenAsync();
+
+    await EnsureMfMagellanTableAsync(connection);
 
     var attributes = DeconstructPayload(payloadAsJson);
     await EnsureColumnsExistAsync(connection, attributes.Keys);
