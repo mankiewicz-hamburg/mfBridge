@@ -114,7 +114,7 @@ app.MapPost("/mfrequest", async (JsonElement payload) =>
 
 app.Run();
 
-public record MFRequest(string Source, double Value, DateTime Timestamp);
+//public record MFRequest(string Source, double Value, DateTime Timestamp);
 
 static async Task EnsureMfMagellanTableAsync(string connectionString)
 {

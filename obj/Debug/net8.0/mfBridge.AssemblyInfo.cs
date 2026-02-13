@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("mfBridge")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7637a69b55957cb39da15e47d255136176ca570c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+69de4b00091dfcd977472a942c70c10b70f29613")]
 [assembly: System.Reflection.AssemblyProductAttribute("mfBridge")]
 [assembly: System.Reflection.AssemblyTitleAttribute("mfBridge")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
